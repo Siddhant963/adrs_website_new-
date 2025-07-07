@@ -5,6 +5,11 @@
 
 
 
+html, body {
+  overflow-x: hidden;
+}
+
+
 /* adrs spark section */
 #btn{
   height: 30px;
