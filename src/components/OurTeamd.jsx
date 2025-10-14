@@ -14,7 +14,7 @@ const teamData = {
   technical: [
     { name: "Piyush Khare", role: "Full Stack Developer", image: "./images/team/Piyush.jpg" },
     { name: "Siddhant Dubey", role: "Chief Technical Officer", image: "./images/team/Sid.jpg" },
-    { name: "Ritesh Saket", role: "Full Stack Developer", image: "./images/team/Ritesh.jpg" },
+    { name: "Ritesh Saket", role: "Full Stack Developer", image: "./images/team/Srajal.jpg" },
     { name: "Aman Vishwakarma", role: "Full Stack Developer", image: "./images/team/AmanV.jpg" },
     { name: "Ishant Patel", role: "Team Lead & Full Stack Developer", image: "./images/team/Ishant.jpg" },
     { name: "Sapeksh Vishwakarma", role: "Full Stack Developer", image: "./images/team/sapekshpic.JPG" },
