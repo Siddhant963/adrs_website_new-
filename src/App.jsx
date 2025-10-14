@@ -14,9 +14,11 @@ import TermsOfService from './policy/TermsOfService'
 import CookiesPolicy from './policy/CookiesPolicy'
 import Workshop from './pages/Workshop'
 import ScrollToTop from './components/ScrollToTop';
+import FloatingButton from "./components/FloatingButton";
+import CampusForm from "./components/CampusForm";
 
 
-// 🔥 Spark Pages
+//  Spark Pages
 import SparkLayout from './spark/SparkLayout';
 import SparkHome from './spark/pages/SparkHome';
 import AllCoursesPage from './spark/pages/AllCoursesPage';
@@ -56,9 +58,10 @@ const App = () => {
       <Route path="/terms" element={<><Navbar /><TermsOfService /><Footer /></>} />
       <Route path="/cookies-policy" element={<><Navbar /><CookiesPolicy /><Footer /></>} />
        <Route path="/workshop" element={<><Navbar /><Workshop /><Footer /></>} />
+      <Route path="/campusform" element={<><Navbar /><CampusForm /><Footer /></>} />
 
 
-      {/* 🔥 ADRS Spark Routes */}
+      {/*  ADRS Spark Routes */}
       <Route path="/spark" element={<SparkLayout />}>
         <Route index element={<SparkHome />} />
         <Route path="/spark/allcourses" element={<AllCoursesPage />} />
@@ -67,9 +70,10 @@ const App = () => {
         <Route path="why-adrs-spark" element={<WhyAdrsSpark />} />
         <Route path="registration" element={<Registration />} />
         <Route path="*" element={<NotFound />} />
+       
       </Route>
     </Routes>
-
+  <FloatingButton />
 </>
  
  );
