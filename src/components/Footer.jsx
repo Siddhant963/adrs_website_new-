@@ -19,7 +19,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-2 md:col-span-1">
             <h5>
-              <h3 className="text-white text-2xl font-bold mb-4">ADRS Technosoft</h3><br />Advanced Digital & Reliable Solutions
+              <h3 className="text-white text-2xl font-bold mb-4">ADRS Techno</h3><br />Advanced Digital & Reliable Solutions
             </h5>
             <p className="text-white mb-4 leading-relaxed text-[14px]">
               Innovating the future with cutting-edge technology solutions for your business.
