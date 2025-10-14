@@ -101,7 +101,7 @@ const CampusForm = () => {
           <div className="text-center text-green-600 animate-fadeIn flex flex-col items-center justify-center space-y-3">
             <CheckCircle2 size={40} />
             <p className="text-lg font-medium">
-              ✅ Your response has been submitted successfully!
+              ✅ Your response has been submitted successfully!!
             </p>
             <p className="text-sm text-gray-600">
               We’ll get back to you soon. Thank you!
