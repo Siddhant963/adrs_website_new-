@@ -32,10 +32,10 @@ const CampusForm = () => {
     if (!formData.college.trim()) newErrors.college = "College is required";
     if (
       !formData.passoutYear ||
-      formData.passoutYear < 2020 ||
-      formData.passoutYear > 2030
+      formData.passoutYear < 2023 ||
+      formData.passoutYear > 2027
     )
-      newErrors.passoutYear = "Enter valid passout year (2020-2030)";
+      newErrors.passoutYear = "Enter valid passout year (2024-2026)";
     if (
       !formData.resumeLink.match(
         /^(https?:\/\/)?(www\.)?drive\.google\.com\/.*$/
