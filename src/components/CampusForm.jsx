@@ -58,7 +58,7 @@ const CampusForm = () => {
     setLoading(true);
 
     const scriptURL =
-      "https://script.google.com/macros/s/YOUR_GOOGLE_SCRIPT_URL/exec"; // Replace with your real Google Script URL
+      "https://script.google.com/macros/s/AKfycbwlXZ4dhDvjfGq9ZS8ASgab8NvbEqRFSvJXDOw7sG-kFCVzZcz86Aw1RoWo1WH9TYg/exec"; 
 
     try {
       const response = await fetch(scriptURL, {
@@ -248,7 +248,7 @@ const CampusForm = () => {
               value={formData.resumeLink}
               onChange={handleChange}
               error={errors.resumeLink}
-              placeholder="Paste your Google Drive resume link"
+              placeholder="Paste your Google Drive resume link and access is set to 'Anyone with the link'"
             />
 
             {/* Submit Button */}
