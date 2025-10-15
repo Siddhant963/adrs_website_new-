@@ -29,9 +29,7 @@ const teamData = {
 const OurTeam = () => {
   const [selectedMember, setSelectedMember] = useState(null);
 
-  // Modal handler
-  const openModal = (member) => setSelectedMember(member);
-  const closeModal = () => setSelectedMember(null);
+ 
 
   // Animation variants
   const cardVariants = {
@@ -106,7 +104,6 @@ const OurTeam = () => {
               whileInView="visible"
               whileHover="hover"
               viewport={{ once: true }}
-              onClick={() => openModal(member)}
             >
               <img
                 src={member.image}
@@ -141,7 +138,6 @@ const OurTeam = () => {
               whileInView="visible"
               whileHover="hover"
               viewport={{ once: true }}
-              onClick={() => openModal(member)}
             >
               <img
                 src={member.image}
