@@ -1,41 +1,31 @@
-
-
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 const teamData = {
   founders: [
     {
       name: "Mr. Abhishek Dubey",
       role: "Founder & CEO",
-      image: "./images/team/Abhi.jpg"
+      image: "./images/team/Abhi.jpg",
     },
   ],
   technical: [
     { name: "Piyush Khare", role: "Full Stack Developer", image: "./images/team/Piyush.jpg" },
     { name: "Siddhant Dubey", role: "Chief Technical Officer", image: "./images/team/Sid.jpg" },
-    { name: "Ritesh Saket", role: "Full Stack Developer", image: "./images/team/R.jpg" },
     { name: "Aman Vishwakarma", role: "Full Stack Developer", image: "./images/team/AmanV.jpg" },
     { name: "Ishant Patel", role: "Team Lead & Full Stack Developer", image: "./images/team/Ishant.jpg" },
     { name: "Sapeksh Vishwakarma", role: "Full Stack Developer", image: "./images/team/sapekshpic.JPG" },
-
-    { name: "Sachin Sen", role: "Full Stack Developer Intern", image: "./images/team/Sachin.jpg" },
-        { name: "Sparsh Sahu", role: "Java Full Stack Developer Intern", image: "./images/team/Sparsh.jpg" },
-    { name: "Srajal Vishwakarma", role: "Frontend Developer & UI/UX Intern", image: "./images/team/Srajal.jpg" },
-    { name: "Roshan Sachdev", role: "Game Developer & Backend Intern", image: "./images/team/Rohsan.jpg" },
-  ]
+  ],
 };
 
 const OurTeam = () => {
   const [selectedMember, setSelectedMember] = useState(null);
 
- 
-
-  // Animation variants
+  // Animation Variants
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-    hover: { scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.2)" },
+    hover: { scale: 1.05, boxShadow: "0 10px 25px rgba(0,0,0,0.25)" },
   };
 
   const modalVariants = {
@@ -43,22 +33,27 @@ const OurTeam = () => {
     visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
   };
 
+  const closeModal = () => setSelectedMember(null);
+
   return (
-    <div className="bg-gradient-to-b from-black to-gray-900 text-white min-h-screen">
+    <div className="bg-gradient-to-b from-black via-gray-900 to-gray-950 text-white min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background floating shapes */}
         <div className="absolute inset-0 z-0">
           <motion.div
-            className="absolute w-40 h-40 bg-blue-500/20 rounded-full top-10 left-10"
+            className="absolute w-48 h-48 bg-blue-500/20 rounded-full top-10 left-10 blur-3xl"
             animate={{ y: [0, -20, 0], scale: [1, 1.1, 1] }}
-            transition={{ repeat: Infinity, duration: 4 }}
+            transition={{ repeat: Infinity, duration: 5 }}
           />
           <motion.div
-            className="absolute w-24 h-24 bg-purple-500/20 rounded-full bottom-20 right-20"
+            className="absolute w-32 h-32 bg-purple-500/20 rounded-full bottom-20 right-20 blur-3xl"
             animate={{ y: [0, 20, 0], scale: [1, 1.2, 1] }}
-            transition={{ repeat: Infinity, duration: 5, delay: 1 }}
+            transition={{ repeat: Infinity, duration: 6, delay: 1 }}
           />
         </div>
+
+        {/* Title */}
         <motion.div
           className="relative z-10 text-center px-4 sm:px-6 md:px-8"
           initial={{ opacity: 0, y: 20 }}
@@ -87,29 +82,29 @@ const OurTeam = () => {
       {/* Founders Section */}
       <section className="py-20 px-4">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-white-400"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-100"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
           Founding Visionaries
         </motion.h2>
-        <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-10 max-w-6xl mx-auto">
           {teamData.founders.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 rounded-2xl p-6 w-full sm:w-80 cursor-pointer"
+              className="bg-gray-800/80 rounded-2xl p-8 w-full sm:w-80 hover:bg-gray-700/80 transition-all duration-300"
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
               whileHover="hover"
               viewport={{ once: true }}
+              onClick={() => setSelectedMember(member)}
             >
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-48 h-48 object-cover rounded-full mx-auto mb-4 border-2 border-white-500"
-                loading="lazy"
+                className="w-48 h-48 object-cover rounded-full mx-auto mb-6 border-4 border-blue-500/60 shadow-lg"
               />
               <h3 className="text-2xl font-semibold text-center">{member.name}</h3>
               <p className="text-gray-400 text-center">{member.role}</p>
@@ -119,31 +114,31 @@ const OurTeam = () => {
       </section>
 
       {/* Technical Team Section */}
-      <section className="py-20 px-4 bg-gray-900">
+      <section className="py-20 px-4 bg-gray-900/90">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-white-400"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-100"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
           Technical Wizards
         </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
           {teamData.technical.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 rounded-2xl p-6 cursor-pointer"
+              className="bg-gray-800/80 rounded-2xl p-6 cursor-pointer hover:bg-gray-700/80 transition-all duration-300"
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
               whileHover="hover"
               viewport={{ once: true }}
+              onClick={() => setSelectedMember(member)}
             >
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-40 h-40 object-cover rounded-full mx-auto mb-4 border-2 border-white-500"
-                loading="lazy"
+                className="w-36 h-36 object-cover rounded-full mx-auto mb-4 border-2 border-blue-400/70 shadow-md"
               />
               <h3 className="text-xl font-semibold text-center">{member.name}</h3>
               <p className="text-gray-400 text-center">{member.role}</p>
@@ -152,7 +147,7 @@ const OurTeam = () => {
         </div>
       </section>
 
-      {/* Modal for Team Member Details */}
+      {/* Modal */}
       <AnimatePresence>
         {selectedMember && (
           <motion.div
@@ -162,9 +157,9 @@ const OurTeam = () => {
             animate="visible"
             exit="hidden"
           >
-            <div className="bg-gray-800 rounded-2xl p-8 max-w-md mx-4 relative">
+            <div className="bg-gray-800 rounded-2xl p-8 max-w-md mx-4 relative shadow-2xl">
               <button
-                className="absolute top-4 right-4 text-gray-400 hover:text-white"
+                className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl"
                 onClick={closeModal}
                 aria-label="Close modal"
               >
@@ -173,7 +168,7 @@ const OurTeam = () => {
               <img
                 src={selectedMember.image}
                 alt={selectedMember.name}
-                className="w-32 h-32 object-cover rounded-full mx-auto mb-4"
+                className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-2 border-blue-400/70"
               />
               <h3 className="text-2xl font-bold text-center">{selectedMember.name}</h3>
               <p className="text-gray-300 text-center mb-4">{selectedMember.role}</p>
